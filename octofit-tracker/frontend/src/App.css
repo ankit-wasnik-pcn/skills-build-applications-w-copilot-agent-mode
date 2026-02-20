@@ -1,0 +1,248 @@
+/* ═══════════════════════════════════════════════
+   Octofit Tracker — Global Styles
+   Palette:
+     Blue    #3a86ff
+     Purple  #8338ec
+     Orange  #ff6b35
+     Peach   #ffd6a5
+     Dark    #22223b
+     Light   #f8fafc
+═══════════════════════════════════════════════ */
+
+/* ── Base ── */
+:root {
+  --oc-blue:   #3a86ff;
+  --oc-purple: #8338ec;
+  --oc-orange: #ff6b35;
+  --oc-peach:  #ffd6a5;
+  --oc-dark:   #22223b;
+  --oc-light:  #f8fafc;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(150deg, #f0f4ff 0%, #e8e0ff 40%, #fff4ec 100%);
+  color: var(--oc-dark);
+  min-height: 100vh;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+/* ── Navbar ── */
+.navbar {
+  background: linear-gradient(90deg, var(--oc-blue) 0%, var(--oc-purple) 60%, var(--oc-orange) 100%);
+  box-shadow: 0 3px 16px rgba(58,134,255,0.25);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+.navbar-brand {
+  color: #fff !important;
+  letter-spacing: 0.02em;
+}
+.nav-link {
+  color: #f1faee !important;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem !important;
+  font-size: 0.95rem;
+}
+.nav-link:hover {
+  color: var(--oc-peach) !important;
+  background: rgba(255,255,255,0.15);
+}
+.nav-link.active {
+  background: rgba(255,255,255,0.22);
+  color: #fff !important;
+  font-weight: 700;
+}
+
+/* ── Logo (left-aligned in navbar) ── */
+.App-logo {
+  height: 44px;
+  width: 44px;
+  object-fit: contain;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  padding: 2px;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.25);
+}
+.octofit-logo-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Hero Section ── */
+.hero-section {
+  background: linear-gradient(135deg, #dde9ff 0%, #ede8ff 50%, #fff2e6 100%);
+  border: 1px solid rgba(58,134,255,0.12);
+  border-radius: 20px;
+  padding: 3.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 0%, rgba(131,56,236,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Feature Cards ── */
+.feature-card {
+  border-radius: 18px;
+  border: 1px solid rgba(58,134,255,0.1);
+  box-shadow: 0 4px 20px rgba(131,56,236,0.09);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  background: #fff;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(58,134,255,0.2);
+}
+.feature-card .card-title {
+  background: linear-gradient(90deg, var(--oc-blue), var(--oc-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.feature-card .card-body {
+  padding: 1.5rem;
+}
+
+/* ── Cards (generic) ── */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(131,56,236,0.08);
+  border: none;
+  background: #fff;
+}
+.card-header {
+  border-radius: 16px 16px 0 0 !important;
+}
+
+/* ── Tables ── */
+table.table {
+  background: #fdfdff;
+  margin-bottom: 0;
+}
+.table > thead > tr > th {
+  background: linear-gradient(90deg, var(--oc-blue) 0%, var(--oc-purple) 100%) !important;
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: none;
+  padding: 0.85rem 1rem;
+}
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: #eef1ff;
+  --bs-table-accent-bg: #eef1ff;
+}
+.table-hover > tbody > tr:hover > * {
+  background-color: #fff2de !important;
+  --bs-table-accent-bg: #fff2de;
+  transition: background-color 0.15s;
+}
+td, th {
+  vertical-align: middle !important;
+  padding: 0.75rem 1rem;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  background: linear-gradient(90deg, var(--oc-blue) 0%, var(--oc-purple) 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 9px;
+  padding: 0.5rem 1.25rem;
+  transition: filter 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(58,134,255,0.3);
+}
+.btn-primary:hover, .btn-primary:focus {
+  filter: brightness(1.12);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(58,134,255,0.35);
+}
+.btn-outline-primary {
+  border: 2px solid var(--oc-blue);
+  color: var(--oc-blue);
+  font-weight: 600;
+  border-radius: 9px;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.btn-outline-primary:hover {
+  background: var(--oc-blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.btn-success  { border-radius: 9px; font-weight: 600; }
+.btn-warning  { border-radius: 9px; font-weight: 600; }
+.btn-danger   { border-radius: 9px; font-weight: 600; }
+.btn-info     { border-radius: 9px; font-weight: 600; }
+
+/* ── Typography / Headings ── */
+h1, h2, h3, h4, h5 {
+  background: linear-gradient(90deg, var(--oc-blue) 0%, var(--oc-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  display: inline-block;
+}
+/* Reset gradient for headings inside white/coloured containers */
+.table th, .badge, .btn, .navbar h1,
+.text-white h1, .text-white h2 {
+  -webkit-text-fill-color: unset;
+  background: none;
+  background-clip: unset;
+}
+.display-2, .display-4 {
+  font-weight: 800;
+}
+
+/* ── Links ── */
+a {
+  color: var(--oc-purple);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+a:hover {
+  color: var(--oc-blue);
+  text-decoration: underline;
+}
+
+/* ── Badges ── */
+.badge {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 6px;
+}
+
+/* ── Spinner colour tweak ── */
+.spinner-border.text-primary {
+  color: var(--oc-blue) !important;
+}
+
+/* ── Scrollbar (WebKit) ── */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f0f4ff; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--oc-blue), var(--oc-purple));
+  border-radius: 4px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
